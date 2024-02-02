@@ -1,29 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-
-typedef struct AVL_int{
-  int data;
-  struct AVL_int *ls;
-  struct AVL_int *rs;
-  int height;
-}AVL_int;
-
-typedef struct Town{
-  char name[60];
-  AVL_int *IDs;
-  int nbr_way;
-  int nbr_first;
-}Town;
-
-typedef struct AVL{
-  Town data;
-  struct AVL *left;
-  struct AVL *right;
-  int height;
-}AVL;
-
+#include t.h
 
 AVL *createNode(Town val){
   //Initialise an AVL of a structure 'Town'

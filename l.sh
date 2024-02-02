@@ -28,6 +28,8 @@ unset key
 plot 'resultat3.txt' using 2:xtic(1) with boxes lc rgb 'green'
 EOF
 
+rm resultat3.txt
+
 #temps actuel en nanosecondes
 end_time=$(date +%s.%N)
 

@@ -158,7 +158,7 @@ void Infixe(AVL *root){
   //This function writes the town's name, the number of passage and number of time it was first
   if (root != NULL){
     Infixe(root->left);
-    printf("Name: %s %d %d\n", root->data.name, root->data.nbr_first, root->data.nbr_way);
+    printf("Name: %s;%d;%d\n", root->data.name, root->data.nbr_first, root->data.nbr_way);
     Infixe(root->right);
   }
 }

@@ -16,7 +16,7 @@ sed -i 's/;/ /g' data.txt
 exec t.c > t.txt
 rm data.txt
 
-#On affiche le résultat avec gnuplot : on configure les paramètres du graphique (description des axes, valeurs des axes, largeur des boîtes, décalages...) puis on créé le graphique pivoté lors de l'affichage
+#On affiche le résultat avec gnuplot : on configure les paramètres du graphique (description des axes, valeurs des axes, largeur des boîtes) puis on créé le graphique
 gnuplot << EOF
 set terminal png size 1920,1080
 set output 'l.png'

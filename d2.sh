@@ -29,6 +29,8 @@ set offsets 0, 0, 0.5, 0.9
 plot 'resultat2.txt' using (0.5 * column(2)):0:(0.5 * column(2)):(0.4):ytic(1) with boxxy lc rgb 'green'
 EOF
 
+rm resultat2.txt
+
 #temps actuel en nanosecondes
 end_time=$(date +%s.%N)
 

@@ -1,6 +1,7 @@
 #include "s.h"
 
 AVL *createNode(Step val){
+  //create a node containing a structure Step
   AVL *newNode = malloc(sizeof(AVL));
   if (newNode == NULL){
     printf("Error: Memory allocation failed\n");
@@ -14,10 +15,12 @@ AVL *createNode(Step val){
 }
 
 int max(int a, int b){
+  //compare two integers and return the maximum
   return (a > b) ? a : b;
 }
 
 int height(AVL *root){
+  //return the height of a node
   if(root == NULL){
     return 0;
   }
@@ -32,6 +35,7 @@ int getBalance(AVL *root){
 }
 
 AVL *rightRotate(AVL *root){
+  //Return the root of the tree after it was rotated to the right
   AVL *x = root->left;
   AVL *y = x->right;
   x->right = root;
@@ -42,6 +46,7 @@ AVL *rightRotate(AVL *root){
 }
 
 AVL *leftRotate(AVL *root){
+  //Return the root of the tree after it was rotated to the left
   AVL *x = root->right;
   AVL *y = x->left;
   x->left = root;
@@ -52,6 +57,7 @@ AVL *leftRotate(AVL *root){
 }
 
 AVL * Balance(AVL *root, int balance, int val){
+  //Search if the tree is balanced and if not : balance it.
   if(balance > 1 && val < root->left->data.ID){
     return rightRotate(root);
   }
@@ -70,6 +76,7 @@ AVL * Balance(AVL *root, int balance, int val){
 }
 
 AVL *insert(AVL *root, Step now){
+  //Insert a structure Step into the AVL and return it
   if(root == NULL){
     now.max = now.km;
     now.min = now.km;
@@ -140,6 +147,7 @@ AVL *insert2(AVL *root, Step now){
 }
 
 void Infixe(AVL *root,int* num){
+  // Print the 50 highest data.max-data.min structure
   if(root != NULL && *num > 0){
     Infixe(root->right,num);
     if(*num > 0){
@@ -151,6 +159,7 @@ void Infixe(AVL *root,int* num){
 }
 
 AVL * Postfixe(AVL *root,AVL *root2){
+  //Fill the first AVL into the second
   if(root != NULL){
     root->data.moy = root->data.max - root->data.min;
     root2 = Postfixe(root->left,root2);

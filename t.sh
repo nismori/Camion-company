@@ -10,7 +10,7 @@ fi
 start_time=$(date +%s.%N)
 
 #On utilise un AVL dans une fonction c pour trouver les éléments
-cat < $2 | cut -d ';' -f1,f5 > data.txt
+cat < $1 | cut -d ';' -f1,f5 > data.txt
 s.c > s.txt
 rm data.txt
 
